@@ -36,10 +36,10 @@ const nationality = Joi.string().min(1).max(3).messages({
   'string.max': 'The nationality must be less than or equal to 3'
 });
 
-const position = Joi.string().min(10).max(20).messages({
-  'string.base': 'The position must be a string',
-  'string.min': 'The position must be larger than or equal to 10',
-  'string.max': 'The position must be less than or equal to 50'
+const degree = Joi.string().min(10).max(50).messages({
+  'string.base': 'The degree must be a string',
+  'string.min': 'The degree must be larger than or equal to 10',
+  'string.max': 'The degree must be less than or equal to 50'
 });
 
 const telephone = Joi.string().min(10).max(30).messages({
@@ -54,10 +54,10 @@ const email = Joi.string().email().min(10).max(50).messages({
   'string.max': 'The email must be less than or equal to 50'
 });
 
-const password = Joi.string().min(5).max(20).messages({
-  'string.base': 'The password must be a string or an alphanum',
-  'string.min': 'The password must be larger than or equal to 5',
-  'string.max': 'The password must be less than or equal to 100'
+const address = Joi.string().min(5).max(100).messages({
+  'string.base': 'The address must be a string or an alphanum',
+  'string.min': 'The address must be larger than or equal to 5',
+  'string.max': 'The address must be less than or equal to 100'
 });
 
 
@@ -68,10 +68,10 @@ export const employeeCreateScheme = Joi.object({
   date_of_birth: date_of_birth.required(),
   gender: gender.required(),
   nationality: nationality.required(),
-  position: position.optional(),
+  degree: degree.optional(),
   telephone: telephone.optional(),
   email: email.optional(),
-  password: password.optional()
+  address: address.optional()
 });
 
 export const employeeUpdateScheme = Joi.object({
@@ -81,8 +81,8 @@ export const employeeUpdateScheme = Joi.object({
   date_of_birth: date_of_birth,
   gender: gender,
   nationality: nationality,
-  position: position,
+  degree: degree,
   telephone: telephone,
   email: email,
-  password: password
+  address: address
 });
