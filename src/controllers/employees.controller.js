@@ -48,11 +48,11 @@ export const createEmployee = async (req, res) => {
 
   try {
     
-    const [rows] = await pool.query('INSERT INTO employees (dni, first_name, last_name, date_of_birth, gender, nationality, degree, telephone, email, address) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [dni, first_name, last_name, date_of_birth, gender, nationality, degree, telephone, email, address]);
+    const [rows] = await pool.query('INSERT INTO employees (dni, first_name, last_name, date_of_birth, gender, nationality, position, telephone, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [dni, first_name, last_name, date_of_birth, gender, nationality, position, telephone, email, password]);
 
     res.json({ 
       success: true,
-      data: { id: rows.insertId, dni, first_name, last_name, date_of_birth, gender, nationality, degree, telephone, email, address }
+      data: { id: rows.insertId, dni, first_name, last_name, date_of_birth, gender, nationality, position, telephone, email, password }
     });
 
  } catch (error) {
@@ -69,7 +69,7 @@ export const updateEmployee = async (req, res) => {
 
   try {
     
-    const [result] = await pool.query('UPDATE employees SET dni=IFNULL(?, dni), first_name=IFNULL(?, first_name), last_name=IFNULL(?, last_name), date_of_birth=IFNULL(?, date_of_birth), gender=IFNULL(?, gender), nationality=IFNULL(?, nationality), degree=IFNULL(?, degree), telephone=IFNULL(?, telephone), email=IFNULL(?, email), address=IFNULL(?, address) WHERE id=?', [dni, first_name, last_name, date_of_birth, gender, nationality, degree, telephone, email, address, id]);
+    const [result] = await pool.query('UPDATE employees SET dni=IFNULL(?, dni), first_name=IFNULL(?, first_name), last_name=IFNULL(?, last_name), date_of_birth=IFNULL(?, date_of_birth), gender=IFNULL(?, gender), nationality=IFNULL(?, nationality), position=IFNULL(?, degree), telephone=IFNULL(?, telephone), email=IFNULL(?, email), password=IFNULL(?, password) WHERE id=?', [dni, first_name, last_name, date_of_birth, gender, nationality, position, telephone, email, password, id]);
 
     const [rows] = await pool.query('SELECT * FROM employees WHERE id=?', [id]);
 
