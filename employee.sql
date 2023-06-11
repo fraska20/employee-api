@@ -10,15 +10,15 @@ CREATE TABLE IF NOT EXISTS employees (
     date_of_birth VARCHAR(10) NOT NULL,
     gender VARCHAR(2) NOT NULL,
     nationality VARCHAR(3) NOT NULL,
-    position VARCHAR(20),
+    degree VARCHAR(50),
     telephone VARCHAR(30),
     email VARCHAR(50),
-    password VARCHAR(20)
+    address VARCHAR(100)
 );
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
+    username VARCHAR(20) NOT NULL,
     password VARCHAR(20) NOT NULL,
     position VARCHAR(20) NOT NULL
 );
