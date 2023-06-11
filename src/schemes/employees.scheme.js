@@ -81,8 +81,8 @@ export const employeeUpdateScheme = Joi.object({
   date_of_birth: date_of_birth,
   gender: gender,
   nationality: nationality,
-  degree: degree,
+  position: position,
   telephone: telephone,
   email: email,
-  address: address
+  password: password
 });
