@@ -10,10 +10,10 @@ CREATE TABLE IF NOT EXISTS employees (
     date_of_birth VARCHAR(10) NOT NULL,
     gender VARCHAR(2) NOT NULL,
     nationality VARCHAR(3) NOT NULL,
-    degree VARCHAR(50),
+    position VARCHAR(20),
     telephone VARCHAR(30),
     email VARCHAR(50),
-    address VARCHAR(100)
+    password VARCHAR(20)
 );
 
 CREATE TABLE IF NOT EXISTS users (
